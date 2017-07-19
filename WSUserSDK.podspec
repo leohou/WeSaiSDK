@@ -1,0 +1,22 @@
+Pod::Spec.new do |s|
+  s.name = "WSUserSDK"
+  s.version = "1.0"
+  s.summary = "WeSaiSDK"
+  s.license = {"type"=>"MIT", "file"=>"LICENSE"}
+  s.authors = {"leohou"=>"18801024669@163.com"}
+  s.homepage = "http://gitlab.intra.wesai.com/houli/UserFramework"
+  s.description = "TODO:  Add long description of the pod here."
+  s.frameworks = ["UIKit", "Foundation", "SystemConfiguration", "CoreGraphics", "StoreKit",'AdSupport','Security','CoreTelephony']
+  s.xcconfig = {"OTHER_LDFLAGS"=>"-lObjC"}
+  s.source = { :path => '.' }
+
+  s.ios.deployment_target    = '8.0'
+  s.ios.vendored_framework   = 'ios/WSUserSDK.framework'
+
+  s.dependency 'ShareSDK3/ShareSDKPlatforms/WeChat', '~> 3.3.2'
+  s.dependency 'Masonry', '~> 0.6.1'
+  s.dependency 'JSONModel', '~> 1.2.0'
+  s.dependency 'AlipaySDK-2.0'
+  s.dependency 'UITableView+FDTemplateLayoutCell', '~> 1.3'
+  s.ios.resource=['ios/Resource/**/*.{xcassets,wav,mp3,xib,txt,cer}']
+end
