@@ -3,8 +3,8 @@ Pod::Spec.new do |s|
   s.version = "1.0"
   s.summary = "WeSaiSDK"
   s.license = {"type"=>"MIT", "file"=>"LICENSE"}
-  s.authors = {"leohou"=>"18801024669@163.com"}
-  s.homepage = "http://gitlab.intra.wesai.com/houli/UserFramework"
+  s.authors = {"wesaiPublic"=>"app@wesai.com"}
+  s.homepage = "https://github.com/wesaiPublic/WeSaiSDK"
   s.description = "TODO:  Add long description of the pod here."
   s.frameworks = ["UIKit", "Foundation", "SystemConfiguration", "CoreGraphics", "StoreKit",'AdSupport','Security','CoreTelephony']
   s.xcconfig = {"OTHER_LDFLAGS"=>"-lObjC"}
