@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|
-  s.name = "WSUserSDK"
+  s.name = "WeSaiSDK"
   s.version = "1.0"
   s.summary = "WeSaiSDK"
   s.license = {"type"=>"MIT", "file"=>"LICENSE"}
