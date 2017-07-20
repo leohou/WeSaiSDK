@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   s.description = "TODO:  Add long description of the pod here."
   s.frameworks = ["UIKit", "Foundation", "SystemConfiguration", "CoreGraphics", "StoreKit",'AdSupport','Security','CoreTelephony']
   s.xcconfig = {"OTHER_LDFLAGS"=>"-lObjC"}
-  s.source = { :path => '.' }
+  s.source   = { :git => 'https://github.com/wesaiPublic/WeSaiSDK.git', :tag => s.version.to_s }
 
   s.ios.deployment_target    = '8.0'
   s.ios.vendored_framework   = 'ios/WSUserSDK.framework'
