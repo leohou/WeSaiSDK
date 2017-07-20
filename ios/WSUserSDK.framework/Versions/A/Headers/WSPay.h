@@ -111,6 +111,4 @@ typedef void(^WSPCommonBlock)(void); // 通用的回调SDK
  */
 -(void)restoreTranscation;
 
--(void)setHostUrl:(NSString *)url;
-
 @end

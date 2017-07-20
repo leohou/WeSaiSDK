@@ -84,11 +84,6 @@ typedef void(^LoginResult)(WSUserLoginResultModel * resultModel);
  */
 + (NSString *)getUUID;
 
-/**
-
- */
-+ (void)setUrl:(NSString *)url;
-
 
 /**
   tost 提示
