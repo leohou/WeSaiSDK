@@ -17,6 +17,7 @@ typedef NS_ENUM(NSInteger, WSPayType) {
     WSPayTypeAlipay=5, //  支付宝支付
     WSPayTypeHiCard=2, // Hi卡支付
     WSPayTypeIAP=8, //IAP支付
+    WSPayTypeAlipayH5 =6, // 支付宝H5支付
     WSPayTypeAll
 };
 

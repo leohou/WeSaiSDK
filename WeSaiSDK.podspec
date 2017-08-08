@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = "WeSaiSDK"
-  s.version = "1.1"
+  s.version = "1.0"
   s.summary = "WeSaiSDK"
   s.license = {"type"=>"MIT", "file"=>"LICENSE"}
   s.authors = {"wesaiPublic"=>"app@wesai.com"}
@@ -16,7 +16,6 @@ Pod::Spec.new do |s|
   s.dependency 'ShareSDK3/ShareSDKPlatforms/WeChat', '~> 3.3.2'
   s.dependency 'Masonry', '~> 0.6.1'
   s.dependency 'JSONModel', '~> 1.2.0'
-  s.dependency 'AlipaySDK-2.0'
   s.dependency 'UITableView+FDTemplateLayoutCell', '~> 1.3'
   s.ios.resource=['ios/Resource/**/*.{xcassets,wav,mp3,xib,txt,cer}']
 end
