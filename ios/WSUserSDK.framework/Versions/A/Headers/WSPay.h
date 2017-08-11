@@ -79,7 +79,7 @@ typedef void(^WSPCommonBlock)(void); // 通用的回调SDK
  @param channelId 渠道ID
  @param appSecret 加解密key
  */
--(void)registerApp:(NSArray<WSPayTypeModel *> *)payTypeDic channelId:(NSString *)channelId appSecret:(NSString *)appSecret;
+-(void)registerApp:(NSArray<WSPayTypeModel *> *)payTypeDic;
 
 /**
  这个是放到AppDelegate里面，当支付完成接收微信和支付宝回调，返回值是判断是否是微信和支付宝的回调信息，返回NO则App自己处理

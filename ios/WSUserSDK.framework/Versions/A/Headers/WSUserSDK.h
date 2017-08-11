@@ -64,13 +64,6 @@ typedef void(^LoginResult)(WSUserLoginResultModel * resultModel);
 - (void)wsPresentedLoginWithParameters:(NSDictionary *)parameters withController:(UIViewController *)controller completion:(LoginResult) completion;
 
 /**
- 配置网关id
- @param configDic 配置参数 现在传空
- @param
-*/
-- (void)registerConfig:(NSDictionary *)configDic;
-
-/**
  获取当前用户ID
 */
 + (NSString *)getCurrentUserID;
