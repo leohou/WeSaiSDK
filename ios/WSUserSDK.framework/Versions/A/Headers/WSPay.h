@@ -112,4 +112,7 @@ typedef void(^WSPCommonBlock)(void); // 通用的回调SDK
  */
 -(void)restoreTranscation;
 
+//  这个是暴露给开发人员清除所有交易使用，使用一次之后记得关闭这个方法
+-(void)setAllTranscationFailed;
+
 @end
