@@ -16,10 +16,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pgC-k5-mr7">
-                    <rect key="frame" x="0.0" y="367" width="375" height="300"/>
+                    <rect key="frame" x="0.0" y="417" width="375" height="250"/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="300" id="T50-SO-LBy"/>
+                        <constraint firstAttribute="height" constant="250" id="9wH-Pk-YI3"/>
                     </constraints>
                 </view>
             </subviews>
@@ -33,6 +33,7 @@
                 <outlet property="bottomConstraint" destination="3ss-Zd-MdE" id="yXN-RY-dZO"/>
                 <outlet property="contentView" destination="pgC-k5-mr7" id="aV0-jQ-lVW"/>
             </connections>
+            <point key="canvasLocation" x="36.5" y="161.5"/>
         </view>
     </objects>
 </document>

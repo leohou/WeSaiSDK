@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "WSLoginConfigModel.h"
+
 /**
  登录 方式
  **/
@@ -42,10 +44,20 @@ typedef NS_ENUM(NSInteger,WSLoginResultCode) {
 
 
 @end
+
 typedef void(^LoginResult)(WSUserLoginResultModel * resultModel);
 @interface WSUserSDK : NSObject
 
 + (instancetype)shardInstance;
+
+
+/**
+  横竖屏开关
+ **/
+
++ (void)setSupportedInterfaceOrientations:(BOOL)on;
+
+
 
 /**
  注册用户SDK
@@ -53,7 +65,7 @@ typedef void(^LoginResult)(WSUserLoginResultModel * resultModel);
  @param  businessId  (商户认证id，一款游戏对应一个商户id)
  @param  callbackUrl string `回调url`
  */
-- (void)registerApp:(NSString *)marketId appSecret:(NSString *)appSecret appid:(NSString *)appid callbackUrl:(NSString *)callbackUrl;
+- (void)registerApp:(WSLoginConfigModel *)model;
 
 /**
  登录调取方法
