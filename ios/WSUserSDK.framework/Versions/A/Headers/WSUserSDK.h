@@ -4,10 +4,12 @@
 //
 //  Created by houli on 2017/6/9.
 //  Copyright © 2017年 leohou. All rights reserved.
-//
+//v2.0
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "WSLoginConfigModel.h"
+
 /**
  登录 方式
  **/
@@ -42,18 +44,41 @@ typedef NS_ENUM(NSInteger,WSLoginResultCode) {
 
 
 @end
+
 typedef void(^LoginResult)(WSUserLoginResultModel * resultModel);
 @interface WSUserSDK : NSObject
 
 + (instancetype)shardInstance;
 
+
+/**
+  横竖屏开关
+ **/
+
++ (void)setSupportedInterfaceOrientations:(BOOL)on;
+
+
+
 /**
  注册用户SDK
  @param marketId 渠道ID
- @param  businessId  (商户认证id，一款游戏对应一个商户id)
+ @param  appSecret
+ @param  appid
  @param  callbackUrl string `回调url`
  */
 - (void)registerApp:(NSString *)marketId appSecret:(NSString *)appSecret appid:(NSString *)appid callbackUrl:(NSString *)callbackUrl;
+
+/**
+ 注册用户SDK
+ @param marketId 渠道ID
+ @param  appSecret
+ @param  appid
+ @param  callbackUrl string `回调url`
+ @param  wxappId
+ @param  wxappSecret
+ */
+//2.0 对外暴露方法
+- (void)registerApp:(NSString *)marketId appSecret:(NSString *)appSecret appid:(NSString *)appid callbackUrl:(NSString *)callbackUrl wxappId:(NSString *)wxappId wxappSecret:(NSString *)wxappSecret;
 
 /**
  登录调取方法
@@ -98,7 +123,9 @@ typedef void(^LoginResult)(WSUserLoginResultModel * resultModel);
  */
 + (void)cancelViewController:(UIViewController *)viewController;
 
-
-
+/**
+  是否取消登录的返回按钮
+ */
++ (void)setCloseLoginBack:(BOOL)isClose;
 
 @end

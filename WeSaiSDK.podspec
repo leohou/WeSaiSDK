@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = "WeSaiSDK"
-  s.version = "1.1"
+  s.version = "2.0"
   s.summary = "WeSaiSDK"
   s.license = {"type"=>"MIT", "file"=>"LICENSE"}
   s.authors = {"wesaiPublic"=>"app@wesai.com"}
