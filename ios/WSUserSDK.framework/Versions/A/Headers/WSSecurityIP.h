@@ -21,7 +21,7 @@
 + (NSURLSessionDataTask *)getAvailableIPWithAppDeviceID:(NSString *)appDeviceID ClientID:(NSString *)clientID userAge:(long)userAge completion:(void(^)(id data))completion;
 
 //加入ip缓存策略
-- (void)getCacheAvailableIPWithAppDeviceID:(NSString *)appDeviceID ClientID:(NSString *)clientID userAge:(long)userAge completion:(void(^)(NSString *data))completion;
+- (void)getCacheAvailableIPWithAppDeviceID:(NSString *)appDeviceID ClientID:(NSString *)clientID userAge:(long)userAge completion:(void(^)(NSString *data, NSString * extra))completion;
 
 + (void)setIPHostUrl:(NSString *)url;
 
