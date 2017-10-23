@@ -4,7 +4,7 @@
 //
 //  Created by houli on 2017/6/9.
 //  Copyright © 2017年 leohou. All rights reserved.
-//  v2.0.0
+//
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
@@ -52,33 +52,24 @@ typedef void(^LoginResult)(WSUserLoginResultModel * resultModel);
 
 
 /**
-  横竖屏开关
+ 横竖屏 参数说明   这个接口 如果 不设置 或者 参数传nil  就适配 推荐 不设置 因为 如果设置开关 屏幕方向要固定
+ UIDeviceOrientationPortrait,            // Device oriented vertically, home button on the bottom
+ UIDeviceOrientationPortraitUpsideDown,  // Device oriented vertically, home button on the top
+ UIDeviceOrientationLandscapeLeft,       // Device oriented horizontally, home button on the right
+ UIDeviceOrientationLandscapeRight,      // Device oriented horizontally, home button on the left
  **/
 
-+ (void)setSupportedInterfaceOrientations:(BOOL)on;
++ (void)setSupportedInterfaceOrientations:(UIDeviceOrientation)deviceOrientationType;
 
 
 
 /**
  注册用户SDK
  @param marketId 渠道ID
- @param  appSecret
- @param  appid
+ @param  businessId  (商户认证id，一款游戏对应一个商户id)
  @param  callbackUrl string `回调url`
  */
-- (void)registerApp:(NSString *)marketId appSecret:(NSString *)appSecret appid:(NSString *)appid callbackUrl:(NSString *)callbackUrl;
-
-/**
- 注册用户SDK
- @param marketId 渠道ID
- @param  appSecret
- @param  appid
- @param  callbackUrl string `回调url`
- @param  wxappId
- @param  wxappSecret
- */
-//2.0 对外暴露方法
-- (void)registerApp:(NSString *)marketId appSecret:(NSString *)appSecret appid:(NSString *)appid callbackUrl:(NSString *)callbackUrl wxappId:(NSString *)wxappId wxappSecret:(NSString *)wxappSecret;
+- (void)registerApp:(WSLoginConfigModel *)model;
 
 /**
  登录调取方法
@@ -123,9 +114,7 @@ typedef void(^LoginResult)(WSUserLoginResultModel * resultModel);
  */
 + (void)cancelViewController:(UIViewController *)viewController;
 
-/**
-  是否取消登录的返回按钮
- */
-+ (void)setCloseLoginBack:(BOOL)isClose;
+
+
 
 @end

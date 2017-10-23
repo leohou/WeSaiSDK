@@ -31,8 +31,7 @@ typedef NS_ENUM(NSInteger,WSPayResultCode) {
     WSPayResultMissingRequiredParameter =3, // 缺少必要参数（appid）
     WSPayResultInterfaceError =4,//  接口错误
     WSPayResutNoChannelIdAndSecret=5,  //  缺少channelId或APPSecret
-    WSPayResultDontIMPDelegate=6, // 未实现相应的代理
-    WSPayResultUserNotLogin=7  //用户没有登录，请重新登录
+    WSPayResultDontIMPDelegate=6 // 未实现相应的代理
 };
 
 //支付类型model
