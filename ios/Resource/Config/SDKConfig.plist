@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>automaticlogin</key>
+	<true/>
+	<key>userLoginType</key>
+	<string>4</string>
+	<key>appId</key>
+	<string>f97382301493493393361afde1f45327</string>
+	<key>appKey</key>
+	<string>ffd730ef-6fea-45a5-9b8b-25f31f6ba514</string>
+	<key>channle_id</key>
+	<string>123456</string>
+	<key>wxappId</key>
+	<string>wx9875e990d61c58f8</string>
+	<key>wxappSecret</key>
+	<string>1c10dec91044c0eeae80fab945c13b4b</string>
+	<key>aliappId</key>
+	<string></string>
+</dict>
+</plist>

@@ -1,6 +1,0 @@
-framework module WSUserSDK {
-  umbrella header "WSUserSDK.h"
-
-  export *
-  module * { export * }
-}
