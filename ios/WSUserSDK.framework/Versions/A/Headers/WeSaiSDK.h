@@ -159,7 +159,7 @@ typedef void(^ProductListHandler) (BOOL status, id resultData);
  * 获取商品列表
  * completion  分享回调 结果 以数组方式返回
  */
-- (void)weSaiProductListCompletion:(ProductListHandler)completion;
+- (void)weSaiProductListWithHidenLoading:(BOOL)hide Completion:(ProductListHandler)completion;
 
 /*
  *  支付统一下单接口
@@ -167,7 +167,7 @@ typedef void(^ProductListHandler) (BOOL status, id resultData);
  * type  支付的类型 1 微信 2 支付宝
  * completion  分享回调 结果 字典方式返回
  */
-- (void)weSaiPayUnifiedorderProductId:(NSString *)productid withPayType:(WSGPayType )type Completion:(ProductListHandler)completion;
+- (void)weSaiPayUnifiedorderProductId:(NSString *)productid withPayType:(WSGPayType )type WithHidenLoading:(BOOL)hide Completion:(ProductListHandler)completion;
 
 /**
  这个是放到AppDelegate里面，当支付完成接收微信和支付宝回调
@@ -192,4 +192,5 @@ typedef void(^ProductListHandler) (BOOL status, id resultData);
            completion:(ShareStateChangedHandler)completion;
 
 
+- (void)setHostUrl:(NSString *)hostUrl;
 @end
