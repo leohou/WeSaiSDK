@@ -73,11 +73,11 @@ typedef void(^ProductListHandler) (BOOL status, id resultData);
 
 @interface WeSaiSDK : NSObject
 
+@property(nonatomic,assign) BOOL isDebug;
 + (instancetype)shardInstance;
 
 
--(void)registerPayApp:(NSArray<WSPayTypeModel *> *)payTypeDic;
-
+-(void)initPlistApp;
 
 /**
  注册用户SDK
@@ -88,7 +88,7 @@ typedef void(^ProductListHandler) (BOOL status, id resultData);
  @param  wxappId
  @param  wxappSecret
  */
-- (void)registerApp:(NSString *)marketId appSecret:(NSString *)appSecret appid:(NSString *)appid callbackUrl:(NSString *)callbackUrl wxappId:(NSString *)wxappId wxappSecret:(NSString *)wxappSecret;
+- (void)registerApp:(NSString *)marketId appSecret:(NSString *)appSecret appid:(NSString *)appid callbackUrl:(NSString *)callbackUrl wxappId:(NSString *)wxappId wxappSecret:(NSString *)wxappSecret aliappid:(NSString *)aliappid;
 
 /**
    手机号登录
