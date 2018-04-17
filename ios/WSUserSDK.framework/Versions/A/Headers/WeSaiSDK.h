@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import "WSGLoginConfigModel.h"
 #import "WSGRequestMode.h"
 
 /*
@@ -102,7 +101,7 @@ typedef void(^ProductListHandler) (BOOL status, id resultData);
 - (void)registerApp:(NSString *)marketId appSecret:(NSString *)appSecret appid:(NSString *)appid callbackUrl:(NSString *)callbackUrl wxappId:(NSString *)wxappId wxappSecret:(NSString *)wxappSecret;
 
 /**
-     登录
+   手机号登录
  @param model 配置参数 WSGRequestMode 类型
  @param completion 登录完成的回调(成功和失败状态码)
  */
@@ -140,7 +139,15 @@ typedef void(^ProductListHandler) (BOOL status, id resultData);
 - (void)weSaiAutoLogin:(WSGRequestMode *)model WithHidenLoading:(BOOL)hide Completion:(LoginResultHandler)completion;
 
 /**
- 自动登录接口
+ 游客登录
+ @param model 配置参数 WSGRequestMode 类型
+ @param completion 登录完成的回调(成功和失败状态码)
+ */
+
+- (void)weSaiVisitorsLogin:(WSGRequestMode *)model WithHidenLoading:(BOOL)hide Completion:(LoginResultHandler)completion;
+
+/**
+  微信登录
  @param model 配置参数 WSGRequestMode 类型
  @param completion 登录完成的回调(成功和失败状态码)
  */
@@ -184,5 +191,8 @@ typedef void(^ProductListHandler) (BOOL status, id resultData);
 -(void)weSaiShare:(ShareDestination)secen withShareType:(ShareType)type withTitle:(NSString *)title withDesc:(NSString *)desc withThumbImage:(NSString *)imgStr withUrl:(NSString *)url
            completion:(ShareStateChangedHandler)completion;
 
-
+/*
+ * 获取本地plist
+ */
+- (void)getPlist;
 @end

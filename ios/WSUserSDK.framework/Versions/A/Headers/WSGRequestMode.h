@@ -14,6 +14,7 @@
 @property(nonatomic,strong) NSString *mobile;   //手机号
 @property(nonatomic,strong) NSString *validationCode; //验证码
 @property(nonatomic,strong) NSString *password;       //密码
+@property(nonatomic,strong) NSString *token;       //自动登录使用
 /*
 登录方式:
 1: 手机号登录
