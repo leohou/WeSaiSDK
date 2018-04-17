@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
   s.xcconfig = {"OTHER_LDFLAGS"=>"-lObjC"}
   s.source   = { :git => 'https://github.com/wesaiPublic/WeSaiSDK.git'}
 
-  s.ios.deployment_target    = '9.0'
+  s.ios.deployment_target    = '8.0'
   s.ios.vendored_framework   = 'ios/WSUserSDK.framework'
 
   s.dependency 'IQKeyboardManager' ,'5.0.6'

@@ -26,16 +26,6 @@ typedef NS_ENUM (NSInteger, WSGShareStatus) {
     ShareSuccess           = 0,    /**< 分享成功    */
     ShareFail              = 1,    /**< 分享失败    */
 };
-/**
- *
- */
-typedef NS_ENUM(NSInteger, WSGUserLoginType) {
-    WSGLoginTypePhoneCode = 1,  //手机号
-    WSGLoginTypePhonePwd = 2,   //用户密码
-    WSGLoginTypeVisitors = 3,   //游客
-    WSGLoginTypeWeiXin = 4,     //微信
-    
-};
 
 /**
  * 分享类型
@@ -103,6 +93,12 @@ typedef void(^ProductListHandler) (BOOL status, id resultData);
 /**
    手机号登录
  @param model 配置参数 WSGRequestMode 类型
+ 
+ WSGRequestMode *model = [[WSGRequestMode alloc]init];
+ model.mobile = @"你的手机号";
+ model.validationCode = @"你的验证码";
+ model.member_level = @"登录类型"; 参考 WSGUserLoginType
+ 
  @param completion 登录完成的回调(成功和失败状态码)
  */
 - (void)weSaiLogin:(WSGRequestMode *)model WithHidenLoading:(BOOL)hide Completion:(LoginResultHandler)completion;
@@ -111,6 +107,10 @@ typedef void(^ProductListHandler) (BOOL status, id resultData);
 /**
   发送验证码
  @param model 配置参数 WSGRequestMode 类型
+ 
+ WSGRequestMode *model = [[WSGRequestMode alloc]init];
+ model.mobile = @"你的手机号";
+ 
  @param completion 登录完成的回调(成功和失败状态码)
  */
 - (void)weSaiGetCode:(WSGRequestMode *)model WithHidenLoading:(BOOL)hide Completion:(LoginResultHandler)completion;
@@ -167,7 +167,7 @@ typedef void(^ProductListHandler) (BOOL status, id resultData);
  * type  支付的类型 1 微信 2 支付宝
  * completion  分享回调 结果 字典方式返回
  */
-- (void)weSaiPayUnifiedorderProductId:(NSString *)productid withPayType:(NSString *)type Completion:(ProductListHandler)completion;
+- (void)weSaiPayUnifiedorderProductId:(NSString *)productid withPayType:(WSGPayType )type Completion:(ProductListHandler)completion;
 
 /**
  这个是放到AppDelegate里面，当支付完成接收微信和支付宝回调
@@ -191,8 +191,5 @@ typedef void(^ProductListHandler) (BOOL status, id resultData);
 -(void)weSaiShare:(ShareDestination)secen withShareType:(ShareType)type withTitle:(NSString *)title withDesc:(NSString *)desc withThumbImage:(NSString *)imgStr withUrl:(NSString *)url
            completion:(ShareStateChangedHandler)completion;
 
-/*
- * 获取本地plist
- */
-- (void)getPlist;
+
 @end
