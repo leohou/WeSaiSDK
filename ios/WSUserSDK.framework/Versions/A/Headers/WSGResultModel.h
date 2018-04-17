@@ -9,6 +9,6 @@
 @interface WSGResultModel : NSObject
 @property (nonatomic, strong) NSString * msg; // 提示信息
 @property (nonatomic, assign) int code; // 状态码
-@property (nonatomic, strong) NSDictionary * data; // 返回信息
+@property (nonatomic, strong) NSString * data; // 返回信息
 
 @end
