@@ -9,16 +9,9 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "WSGRequestMode.h"
+#import "WSGPayRequestModel.h"
+#import "WSGResultModel.h"
 
-/*
- *  支付方式
- */
-typedef NS_ENUM (NSInteger, WSGPayType) {
-    WSGPaymentTypeWX          = 1,    /**< 微信支付     */
-    WSGPaymentTypeAli         = 2,    /**< 支付宝支付   */
-    WSGPaymentTypeAliH5       = 3,    /**< 支付宝H5支付 */
-    WSGPaymentTypeIAP         = 4,    /**< 苹果内购支付  */
-};
 /*
  *  分享状态码
  */
@@ -66,16 +59,22 @@ typedef void(^ShareStateChangedHandler) (WSGShareStatus state);
 typedef void(^LoginResultHandler) (id resultData);
 
 /**
+ *  支付返回结果block
+ */
+typedef void(^payResultHandler) (WSGResultModel * resultData);
+
+/**
  *  商品列表 以数组里边装对象方式返回
  */
-typedef void(^ProductListHandler) (BOOL status, id resultData);
+typedef void(^ProductListHandler) (id resultData);
 
 
 @interface WeSaiSDK : NSObject
 
 @property(nonatomic,assign) BOOL isDebug;
-+ (instancetype)shardInstance;
+@property (nonatomic, strong) NSString * sdkVersion;
 
++ (instancetype)shardInstance;
 
 -(void)initPlistApp;
 
@@ -167,7 +166,7 @@ typedef void(^ProductListHandler) (BOOL status, id resultData);
  * type  支付的类型 1 微信 2 支付宝
  * completion  分享回调 结果 字典方式返回
  */
-- (void)weSaiPayUnifiedorderProductId:(NSString *)productid withPayType:(WSGPayType )type WithHidenLoading:(BOOL)hide Completion:(ProductListHandler)completion;
+- (void)weSaiPayUnifiedorder:(WSGPayRequestModel *)model WithHidenLoading:(BOOL)hide Completion:(payResultHandler)completion;
 
 /**
  这个是放到AppDelegate里面，当支付完成接收微信和支付宝回调
