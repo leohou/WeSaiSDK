@@ -71,13 +71,13 @@ typedef void(^ProductListHandler) (id resultData);
 
 @interface WeSaiSDK : NSObject
 
-@property(nonatomic,assign) BOOL isDebug;
-@property (nonatomic, strong) NSString * sdkVersion;
+@property (nonatomic, strong,readonly) NSString * sdkVersion;
 
 + (instancetype)shardInstance;
 
 -(void)initPlistApp;
 
++ (void)setLogEnable:(BOOL)enable;
 /**
  注册用户SDK
  @param marketId 渠道ID
@@ -158,7 +158,7 @@ typedef void(^ProductListHandler) (id resultData);
  * 获取商品列表
  * completion  分享回调 结果 以数组方式返回
  */
-- (void)weSaiProductListWithHidenLoading:(BOOL)hide Completion:(ProductListHandler)completion;
+- (void)weSaiProductList:(WSGPayRequestModel *)model WithHidenLoading:(BOOL)hide Completion:(ProductListHandler)completion;
 
 /*
  *  支付统一下单接口
@@ -167,6 +167,12 @@ typedef void(^ProductListHandler) (id resultData);
  * completion  分享回调 结果 字典方式返回
  */
 - (void)weSaiPayUnifiedorder:(WSGPayRequestModel *)model WithHidenLoading:(BOOL)hide Completion:(payResultHandler)completion;
+
+/*
+ *  消费记录
+ * completion  分享回调 结果 字典方式返回
+ */
+- (void)weSaiPayTracker:(WSGPayRequestModel *)model WithHidenLoading:(BOOL)hide Completion:(payResultHandler)completion;
 
 /**
  这个是放到AppDelegate里面，当支付完成接收微信和支付宝回调
