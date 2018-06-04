@@ -159,6 +159,20 @@ typedef void(^ProductListHandler) (id resultData);
  * completion  分享回调 结果 以数组方式返回
  */
 - (void)weSaiProductList:(WSGPayRequestModel *)model WithHidenLoading:(BOOL)hide Completion:(ProductListHandler)completion;
+/*
+ * 获取商品信息
+ * completion  分享回调 结果 以数组方式返回
+ */
+- (void)weSaiProductInfo:(WSGPayRequestModel *)model WithHidenLoading:(BOOL)hide Completion:(ProductListHandler)completion;
+
+
+/*
+ *  获取商品支付方式
+ * productid 商品id
+ * type  支付的类型 1 微信 2 支付宝
+ * completion  分享回调 结果 字典方式返回
+ */
+- (void)weSaiPaymentWay:(WSGPayRequestModel *)model View:(UIView *)view Completion:(payResultHandler)completion;
 
 /*
  *  支付统一下单接口

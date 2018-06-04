@@ -11,6 +11,7 @@
  *  支付方式
  */
 typedef NS_ENUM (NSInteger, WSGPayType) {
+    WSGPaymentTypeYL          = 0,    /**< 银联支付     */
     WSGPaymentTypeWX          = 1,    /**< 微信支付     */
     WSGPaymentTypeAli         = 2,    /**< 支付宝支付   */
     WSGPaymentTypeAliH5       = 3,    /**< 支付宝H5支付 */
@@ -25,6 +26,7 @@ typedef NS_ENUM (NSInteger, WSGPayType) {
     添加 到 工程的plist 中
  */
 @property(nonatomic,strong) NSString *productId;            //商品id 必传字段
+@property(nonatomic,strong) NSString *productCode;          //第三方商品id选传字段
 @property(nonatomic,strong) NSString *userID;               //用户id 必传字段
 @property(nonatomic,assign) WSGPayType payMentType;         //支付方式 必传字段
 @property(nonatomic,strong) NSString *phoneNumber;          //手机号 选填字段
