@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -24,12 +25,23 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fB5-qY-hxC">
                                 <rect key="frame" x="0.0" y="0.0" width="117" height="85"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" preservesSuperviewLayoutMargins="YES" image="weixin" translatesAutoresizingMaskIntoConstraints="NO" id="UUr-0m-8hE">
+                                        <rect key="frame" x="15" y="-3.5" width="87" height="88.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="UUr-0m-8hE" secondAttribute="height" multiplier="56:57" id="Ffm-Qy-it0"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="UUr-0m-8hE" secondAttribute="bottom" id="0OC-oa-Cel"/>
+                                    <constraint firstItem="UUr-0m-8hE" firstAttribute="centerX" secondItem="fB5-qY-hxC" secondAttribute="centerX" id="H9H-qb-qma"/>
+                                    <constraint firstItem="UUr-0m-8hE" firstAttribute="leading" secondItem="fB5-qY-hxC" secondAttribute="leading" constant="15" id="Tc7-hn-eWv"/>
+                                    <constraint firstAttribute="trailing" secondItem="UUr-0m-8hE" secondAttribute="trailing" constant="15" id="U4Z-Sx-veU"/>
+                                </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="252" preservesSuperviewLayoutMargins="YES" image="weixin" translatesAutoresizingMaskIntoConstraints="NO" id="UUr-0m-8hE">
-                                <rect key="frame" x="30.5" y="14" width="56" height="57"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fRI-3q-KIW">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="headTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fRI-3q-KIW">
                                 <rect key="frame" x="0.0" y="85" width="117" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="s2R-L1-ahZ"/>
@@ -47,7 +59,6 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="UUr-0m-8hE" firstAttribute="centerX" secondItem="fB5-qY-hxC" secondAttribute="centerX" id="1UL-7A-adU"/>
                             <constraint firstItem="fRI-3q-KIW" firstAttribute="top" secondItem="fB5-qY-hxC" secondAttribute="bottom" id="D0w-Y6-Dps"/>
                             <constraint firstItem="fB5-qY-hxC" firstAttribute="leading" secondItem="pwb-gS-SWc" secondAttribute="leading" id="Drp-c0-g51"/>
                             <constraint firstItem="fRI-3q-KIW" firstAttribute="leading" secondItem="pwb-gS-SWc" secondAttribute="leading" id="MU4-vp-tyw"/>
@@ -55,7 +66,6 @@
                             <constraint firstAttribute="bottom" secondItem="fRI-3q-KIW" secondAttribute="bottom" id="cYD-sB-ga1"/>
                             <constraint firstItem="fB5-qY-hxC" firstAttribute="top" secondItem="pwb-gS-SWc" secondAttribute="top" id="dQa-GS-Nss"/>
                             <constraint firstAttribute="trailing" secondItem="fB5-qY-hxC" secondAttribute="trailing" id="fuX-4i-5dD"/>
-                            <constraint firstItem="UUr-0m-8hE" firstAttribute="centerY" secondItem="fB5-qY-hxC" secondAttribute="centerY" id="n2h-eX-wKl"/>
                         </constraints>
                     </view>
                 </subviews>
