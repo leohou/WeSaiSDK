@@ -172,7 +172,7 @@ typedef void(^ProductListHandler) (id resultData);
  * type  支付的类型 1 微信 2 支付宝
  * completion  分享回调 结果 字典方式返回
  */
-- (void)weSaiPaymentWay:(WSGPayRequestModel *)model View:(UIView *)view Completion:(payResultHandler)completion;
+- (void)weSaiPaymentWay:(WSGPayRequestModel *)model Completion:(payResultHandler)completion;
 
 /*
  *  支付统一下单接口
