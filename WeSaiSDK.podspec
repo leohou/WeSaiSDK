@@ -13,10 +13,9 @@ Pod::Spec.new do |s|
   s.ios.deployment_target    = '8.0'
   s.ios.vendored_framework   = 'ios/WSUserSDK.framework'
 
-  s.dependency 'IQKeyboardManager' ,'5.0.6'
-  s.dependency 'FMDB', '2.7.2'
-  s.dependency 'ShareSDK3/ShareSDKPlatforms/WeChat', '3.3.2'
+  s.dependency 'WechatOpenSDK'
   s.dependency 'Masonry', '0.6.1'
   s.dependency 'JSONModel', '1.2.0'
+  s.dependency 'AlipaySDK-2.0'
   s.ios.resource=['ios/Resource/**/*.{xcassets,wav,mp3,xib,txt,cer,plist}']
 end

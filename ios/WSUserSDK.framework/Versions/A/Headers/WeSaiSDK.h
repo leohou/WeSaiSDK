@@ -4,7 +4,7 @@
 //
 //  Created by houli on 2017/6/9.
 //  Copyright © 2017年 leohou. All rights reserved.
-//  v2.0.0
+//  v1.0 ThirdPay
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
@@ -90,6 +90,11 @@ typedef void(^ProductListHandler) (id resultData);
 - (void)registerApp:(NSString *)marketId appSecret:(NSString *)appSecret appid:(NSString *)appid callbackUrl:(NSString *)callbackUrl wxappId:(NSString *)wxappId wxappSecret:(NSString *)wxappSecret aliappid:(NSString *)aliappid;
 
 /**
+ * 获取配置信息
+ */
+- (void)weSaiGetConfigInfo:(WSGRequestMode *)model Completion:(LoginResultHandler)completion;
+
+/**
    手机号登录
  @param model 配置参数 WSGRequestMode 类型
  
@@ -113,7 +118,6 @@ typedef void(^ProductListHandler) (id resultData);
  @param completion 登录完成的回调(成功和失败状态码)
  */
 - (void)weSaiGetCode:(WSGRequestMode *)model WithHidenLoading:(BOOL)hide Completion:(LoginResultHandler)completion;
-
 
 /**
  注册
