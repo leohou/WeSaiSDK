@@ -30,4 +30,6 @@ typedef NS_ENUM(NSInteger, WSGUserLoginType) {
 @property(nonatomic,strong) NSString *password;       //密码
 @property(nonatomic,strong) NSString *token;       //自动登录使用
 @property(nonatomic,assign) WSGUserLoginType loginType;   //登录方式
+@property(nonatomic,assign) NSString *ext_a;   //扩展字段
+
 @end

@@ -4,7 +4,7 @@
 //
 //  Created by houli on 2017/6/9.
 //  Copyright © 2017年 leohou. All rights reserved.
-//  v2.0.0
+//  v2.0.0 ThirdNoPay
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
@@ -90,6 +90,11 @@ typedef void(^ProductListHandler) (id resultData);
 - (void)registerApp:(NSString *)marketId appSecret:(NSString *)appSecret appid:(NSString *)appid callbackUrl:(NSString *)callbackUrl wxappId:(NSString *)wxappId wxappSecret:(NSString *)wxappSecret aliappid:(NSString *)aliappid;
 
 /**
+ * 获取配置信息
+ */
+- (void)weSaiGetConfigInfo:(WSGRequestMode *)model Completion:(LoginResultHandler)completion;
+
+/**
    手机号登录
  @param model 配置参数 WSGRequestMode 类型
  
@@ -113,7 +118,6 @@ typedef void(^ProductListHandler) (id resultData);
  @param completion 登录完成的回调(成功和失败状态码)
  */
 - (void)weSaiGetCode:(WSGRequestMode *)model WithHidenLoading:(BOOL)hide Completion:(LoginResultHandler)completion;
-
 
 /**
  注册
@@ -187,16 +191,6 @@ typedef void(^ProductListHandler) (id resultData);
  * completion  分享回调 结果 字典方式返回
  */
 - (void)weSaiPayTracker:(WSGPayRequestModel *)model WithHidenLoading:(BOOL)hide Completion:(payResultHandler)completion;
-
-/**
- 这个是放到AppDelegate里面，当支付完成接收微信和支付宝回调
- @param url 微信和支付宝的回调URL
- @param completion 处理完成的回调
- @return 返回值，返回NO则App自己处理
- */
-+(BOOL)handleOpenURL:(NSURL *)url completion:(void(^)())completion;
-
-
 
 /*    分享
  * secen 分享到哪个场景 如 聊天 朋友圈  收藏
